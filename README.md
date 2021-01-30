@@ -12,7 +12,7 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) and [git](https://
 <br>On Linux, MacOS, and Windows's Cygwin (or MinGW), GCC or Clang should be installed.</br>
 <br>On Windows, Microsoft C/C++ compiler (for Visual Studio) should be installed (to avoid errors like: "Unable to find vcvarsall.bat").</br>
 OpenSSL should be installed.
-<br>If you get memory error from Python, expand Windows paging or Linux swap.<br>
+<br>If you get memory error from Python, increase Windows paging or Linux swap.<br>
 ## Installation instructions
 
 ```bash
@@ -22,7 +22,15 @@ git clone https://github.com/tadaka9/pyencpng.git
 cd pyencpng
 pip3 install -r requirements.txt
 ```
-
+## BINARY USAGE
+```
+# Windows
+encpng-windows-amd64.exe [ [ -dir or --directory ] OUTPUT_PATH [ -e or --encrypt ] STRING or FILE [ -p or --password ] PASSWORD ] or [ [ --dir or --directory ] OUTPUT_PATH [ -d or --decrypt ] FILE [ -p or --password ] PASSWORD ]
+# Linux
+./encpng-linux-amd64 [ [ -dir or --directory ] OUTPUT_PATH [ -e or --encrypt ] STRING or FILE [ -p or --password ] PASSWORD ] or [ [ --dir or --directory ] OUTPUT_PATH [ -d or --decrypt ] FILE [ -p or --password ] PASSWORD ]
+# Raspberry Pi with Linux
+./encpng-linux-armhf [ [ -dir or --directory ] OUTPUT_PATH [ -e or --encrypt ] STRING or FILE [ -p or --password ] PASSWORD ] or [ [ --dir or --directory ] OUTPUT_PATH [ -d or --decrypt ] FILE [ -p or --password ] PASSWORD ]
+```
 ## USAGE
 ```
 python3 encpng-cli.py [ [ -dir or --directory ] OUTPUT_PATH [ -e or --encrypt ] STRING or FILE [ -p or --password ] PASSWORD ] or [ [ --dir or --directory ] OUTPUT_PATH [ -d or --decrypt ] FILE [ -p or --password ] PASSWORD ]
