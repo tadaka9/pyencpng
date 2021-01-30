@@ -33,10 +33,10 @@ encpng-windows-amd64.exe [ [ -dir or --directory ] OUTPUT_PATH [ -e or --encrypt
 ```
 ## EXAMPLES
 ```
-./encpng-linux-amd64 -dir path/to/output -e Hello World -p Konnichiwa!?[
+./encpng-linux-amd64 -dir path/to/output -e Hello World -p Konnichiha!?[
 ```
 ```
-./encpng-linux-amd64 -d 08a30930-ecdf-4f6a-9978-c274093d63e1.png -p Konnichiwa!?[
+./encpng-linux-amd64 -d 08a30930-ecdf-4f6a-9978-c274093d63e1.png -p Konnichiha!?[
 ```
 ## USAGE
 ```
