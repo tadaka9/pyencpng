@@ -21,16 +21,15 @@ python3 -m pip install --upgrade pip setuptools wheel
 git clone https://github.com/tadaka9/pyencpng.git
 cd pyencpng
 pip3 install -r requirements.txt
-python3 setup.py install
 ```
 
 ## USAGE
 ```
-python3 encpng.py [ [ -dir or --directory ] OUTPUT_PATH [ -e or --encrypt ] STRING or FILE [ -p or --password ] PASSWORD ] or [ [ --dir or --directory ] OUTPUT_PATH [ -d or --decrypt ] FILE [ -p or --password ] PASSWORD ]
+python3 encpng-cli.py [ [ -dir or --directory ] OUTPUT_PATH [ -e or --encrypt ] STRING or FILE [ -p or --password ] PASSWORD ] or [ [ --dir or --directory ] OUTPUT_PATH [ -d or --decrypt ] FILE [ -p or --password ] PASSWORD ]
 ```
 ## EXAMPLES
 ```python
-python3 encpng.py --dir out/dir/path --encrypt file.txt --password Password1 23!"£
+python3 encpng-cli.py --dir out/dir/path --encrypt file.txt --password Password1 23!"£
 ```
 ```python
 # within Python 3, using library
@@ -39,10 +38,10 @@ from encpng import
 result = encrypt("String", "Password1 23!\"£")
 ```
 ```python
-python encpng.py --dir out/dir/path --decrypt 08a30930-ecdf-4f6a-9978-c274093d63e1.png --password Password1 23!"£
+python encpng-cli.py --dir out/dir/path --decrypt 08a30930-ecdf-4f6a-9978-c274093d63e1.png --password Password1 23!"£
 ```
 ```python
-from encpngcli import decrypt
+from encpng-cli import decrypt
 # result type may vary depending on encrypted data
 result = decrypt("08a30930-ecdf-4f6a-9978-c274093d63e1.png", "Password1 23!\"£")
 ```
