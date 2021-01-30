@@ -31,6 +31,11 @@ encpng-windows-amd64.exe [ [ -dir or --directory ] OUTPUT_PATH [ -e or --encrypt
 # Raspberry Pi with Linux
 ./encpng-linux-armhf [ [ -dir or --directory ] OUTPUT_PATH [ -e or --encrypt ] STRING or FILE [ -p or --password ] PASSWORD ] or [ [ --dir or --directory ] OUTPUT_PATH [ -d or --decrypt ] FILE [ -p or --password ] PASSWORD ]
 ```
+## EXAMPLES
+```
+./encpng-linux-amd64 -dir path/to/output -e Hello World -p Konnichiwa!?[
+./encpng-linux-amd64 -d 08a30930-ecdf-4f6a-9978-c274093d63e1.png -p Konnichiwa!?[
+```
 ## USAGE
 ```
 python3 encpng-cli.py [ [ -dir or --directory ] OUTPUT_PATH [ -e or --encrypt ] STRING or FILE [ -p or --password ] PASSWORD ] or [ [ --dir or --directory ] OUTPUT_PATH [ -d or --decrypt ] FILE [ -p or --password ] PASSWORD ]
