@@ -41,7 +41,7 @@ result = encrypt("String", "Password1 23!\"£")
 python encpng-cli.py --dir out/dir/path --decrypt 08a30930-ecdf-4f6a-9978-c274093d63e1.png --password Password1 23!"£
 ```
 ```python
-from encpng-cli import decrypt
+from encpng import decrypt
 # result type may vary depending on encrypted data
 result = decrypt("08a30930-ecdf-4f6a-9978-c274093d63e1.png", "Password1 23!\"£")
 ```
