@@ -12,6 +12,7 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) and [git](https://
 <br>On Linux, MacOS, and Windows's Cygwin (or MinGW), GCC or Clang should be installed.</br>
 <br>On Windows, Microsoft C/C++ compiler (for Visual Studio) should be installed (to avoid errors like: "Unable to find vcvarsall.bat").</br>
 OpenSSL should be installed.
+If you get memory error from Python, expand Windows paging or Linux swap.
 ## Installation instructions
 
 ```bash
