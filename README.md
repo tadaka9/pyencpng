@@ -31,12 +31,18 @@ encpng-windows-amd64.exe [ [ -dir or --directory ] OUTPUT_PATH [ -e or --encrypt
 # Raspberry Pi with Linux
 ./encpng-linux-armhf [ [ -dir or --directory ] OUTPUT_PATH [ -e or --encrypt ] STRING or FILE [ -p or --password ] PASSWORD ] or [ [ --dir or --directory ] OUTPUT_PATH [ -d or --decrypt ] FILE [ -p or --password ] PASSWORD ]
 ```
-## EXAMPLES
+## BINARY EXAMPLES
 ```
+# Linux
 ./encpng-linux-amd64 -dir path/to/output -e Hello World -p Konnichiha!?[
+# Windows
+encpng-windows-amd64.exe -dir path/to/output -e Hello World -p Konnichiha!?[
 ```
 ```
-./encpng-linux-amd64 -d 08a30930-ecdf-4f6a-9978-c274093d63e1.png -p Konnichiha!?[
+# Linux
+./encpng-linux-amd64 -d 08a30930-ecdf-4f6a-9978-c274093d63e1.png -p Konnichiha!? [
+# Windows
+encpng-windows-amd64.exe -d 08a30930-ecdf-4f6a-9978-c274093d63e1.png -p Konnichiha!? [
 ```
 ## USAGE
 ```
@@ -47,16 +53,18 @@ python3 encpng-cli.py [ [ -dir or --directory ] OUTPUT_PATH [ -e or --encrypt ] 
 python3 encpng-cli.py --dir out/dir/path --encrypt file.txt --password Password1 23!"£
 ```
 ```python
-# within Python 3, using library
-from encpng import 
-# with result of type <class 'PIL.Image.Image'>
-result = encrypt("String", "Password1 23!\"£")
-```
-```python
 python encpng-cli.py --dir out/dir/path --decrypt 08a30930-ecdf-4f6a-9978-c274093d63e1.png --password Password1 23!"£
 ```
 ```python
-from encpng import decrypt
-# result type may vary depending on encrypted data
-decrypt("08a30930-ecdf-4f6a-9978-c274093d63e1.png", "Password1 23!\"£")
+from encpng import EncPNG
+enc = EncPNG("Ko n ni chi ka!", "Password ][!")
+# Image passed as bytes
+img = enc.encrypt()
+result = enc.decrypt(img)
+```
+```python
+from encpng import EncPNG
+enc = EncPNG("Ko n ni chi ka!", "Password ][!", "/path/to/out")
+enc.encrypt()
+enc.decrypt("08a30930-ecdf-4f6a-9978-c274093d63e1.png", "Password ][!", "/path/to/file")
 ```

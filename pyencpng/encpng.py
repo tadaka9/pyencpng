@@ -85,7 +85,7 @@ class EncPNG:
             colorslist.append(randtuple)
         return colorslist, dataset
 
-    def decrypt(self, s = None):
+    def decrypt(self, s=None):
         """
         Decrypt image data using stored as ztEXt chunks and reverting RGB values to
         dataset; store decrypted data to a file or return as bytes
