@@ -48,7 +48,7 @@ python3 encpng-cli.py --dir out/dir/path --encrypt file.txt --password Password1
 ```
 ```python
 # within Python 3, using library
-from encpng import 
+from encpng import encrypt
 # with result of type <class 'PIL.Image.Image'>
 result = encrypt("String", "Password1 23!\"£")
 ```
