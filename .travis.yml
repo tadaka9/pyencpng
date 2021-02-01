@@ -1,4 +1,6 @@
 # Config file for automatic testing at travis-ci.org
+os: windows
+
 language: python
 python:
   - "3.6"
