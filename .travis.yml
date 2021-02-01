@@ -1,4 +1,7 @@
 # Config file for automatic testing at travis-ci.org
+
+dist: bionic
+
 env:
   global:
     - OPENSSL=1.1.1f
@@ -9,8 +12,7 @@ env:
     # Set rpath with env var instead of -Wl,-rpath linker flag
     # OpenSSL ignores LDFLAGS when linking bin/openssl
     - LD_RUN_PATH="${OPENSSL_DIR}/lib"
-    - sh python_interpreter.sh
-    - /opt/python380-amd64/python3.8
+    - cd /opt/python380-amd64/python3.8
     - sudo sh python_interpreter.sh
 
 language: python
