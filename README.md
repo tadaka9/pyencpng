@@ -55,6 +55,7 @@ python3 encpng-cli.py --dir out/dir/path --encrypt file.txt --password Password1
 ```python
 python encpng-cli.py --dir out/dir/path --decrypt 08a30930-ecdf-4f6a-9978-c274093d63e1.png --password Password1 23!"£
 ```
+## USING LIBRARY ENCPNG
 ```python
 from encpng import EncPNG
 enc = EncPNG("Ko n ni chi ka!", "Password ][!")
