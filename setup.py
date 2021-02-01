@@ -28,5 +28,5 @@ setup(
     ],
     keywords='steganography, cryptography, images',
     python_requires='>=3.6, <4',
-    install_requires=['filetype',"Pillow","pybase64","py-cpuinfo","pycryptodomex"],
+    install_requires=['filetype', "Pillow", "pybase64", "py-cpuinfo", "pycryptodomex"],
 )
