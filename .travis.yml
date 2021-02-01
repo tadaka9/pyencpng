@@ -1,7 +1,7 @@
 # Config file for automatic testing at travis-ci.org
-os: osx
+os: ubuntu
 
-osx_image: xcode12.2
+osx_image: focal fossa
 
 language: python
 
