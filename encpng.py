@@ -105,7 +105,7 @@ class EncPNG:
                            Tag = metadata["DatasetTag"])
         colorslist = list(img.getdata())
         dataset = literal_eval(bytes.decode(self.decrypt_aes256(datasetdict)))
-        with TemporaryFile(mode='w+b') as f:
+        with TemporaryFile(mode='w+b', delete=True) as f:
             for letter in self.mapem(colorslist, dataset):
                 f.write(bytes(letter, "utf-8"))
             f.seek(0)
