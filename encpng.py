@@ -42,6 +42,7 @@ from PIL.PngImagePlugin import PngInfo
 from pybase64 import urlsafe_b64encode, urlsafe_b64decode
 from random import seed, shuffle, SystemRandom
 from string import ascii_uppercase, ascii_lowercase, digits
+from tempfile import TemporaryFile
 from uuid import uuid4
 from sys import maxsize
 
@@ -85,7 +86,7 @@ class EncPNG:
             colorslist.append(randtuple)
         return colorslist, dataset
 
-    def decrypt(self, s = None):
+    def decrypt(self, s=None):
         """
         Decrypt image data using stored as ztEXt chunks and reverting RGB values to
         dataset; store decrypted data to a file or return as bytes
@@ -104,9 +105,12 @@ class EncPNG:
                            Tag = metadata["DatasetTag"])
         colorslist = list(img.getdata())
         dataset = literal_eval(bytes.decode(self.decrypt_aes256(datasetdict)))
-        dataset = [item for k in dataset for item in (k, dataset[k])]
-        datasetdict = dict(zip(dataset[1::2], dataset[::2]))
-        data = ''.join(datasetdict[i] for i in colorslist if i in dataset)
+        with TemporaryFile(mode='w+b') as f:
+            for letter in self.mapem(colorslist, dataset):
+                f.write(bytes(letter, "utf-8"))
+            f.seek(0)
+            data = f.read()
+            f.close()
         datadict = dict(CipherData = data,
                         Nonce = metadata["DataNonce"],
                         Salt = metadata["DataSalt"],
@@ -123,7 +127,7 @@ class EncPNG:
                     f.write(data)
                     f.close()
         else:
-            return data.decode("utf-8")
+            return data.decode('utf-8')
 
     def decrypt_aes256(self, dictionary):
         """"
@@ -174,7 +178,7 @@ class EncPNG:
             img.save(b, "PNG", pnginfo = metadata)
             b.seek(0)
             return b
-        img.save(self.directory + sep + str(uuid4()), "PNG", pnginfo = metadata)
+        img.save(self.directory + sep + str(uuid4()) + ".png", "PNG", pnginfo = metadata)
 
     def encrypt_aes256(self, dataset):
         """
@@ -196,6 +200,13 @@ class EncPNG:
             "Salt": urlsafe_b64encode(salt).decode('utf-8'),
             "Tag": urlsafe_b64encode(tag).decode('utf-8')
         }
+
+    def mapem(self, iterable, mapping):
+        dd = {v: k for k, v in mapping.items()}
+        for t in iterable:
+            mapped = dd.get(t)
+            if mapped:
+                yield mapped
 
     @staticmethod
     def rand():

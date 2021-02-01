@@ -47,7 +47,7 @@ parser.add_argument("-dir", "--directory", metavar = 'PATH', nargs = "+",
 parser.add_argument("-e", "--encrypt", nargs = "+", metavar = ("FILE or STRING", "FILE or STRING"),
                     help = "Usage: [-e or --encrypt] FILE or STRING")
 parser.add_argument("-p", "--password", metavar = 'STRING',
-                    nargs = "+", help = "Usage: [-p or --password] STRING", required=True)
+                    nargs = "+", help = "Usage: [-p or --password] STRING")
 args = parser.parse_args()
 if not args.decrypt and not args.encrypt and not args.directory:
     parser.error("Error: arguments not specified")
