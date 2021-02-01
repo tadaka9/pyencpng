@@ -7,7 +7,7 @@ python:
   - "3.9"
   
 before_install:
-  - openssl
+  - openssl aes-256-cbc -K $encrypted_cf94abc85bdc_key -iv $encrypted_cf94abc85bdc_iv -in .env.enc -out .env -d
 
 install: "pip install -r requirements.txt"
 
