@@ -1,4 +1,4 @@
-# PyEncPNG or PyEncrypted PNG
+# PyEncPNG
 
 <img src="https://travis-ci.com/tadaka9/pyencpng.svg?branch=master"></a>
 
