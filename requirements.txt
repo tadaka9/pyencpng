@@ -1,5 +1,0 @@
-filetype
-Pillow
-pybase64
-py-cpuinfo
-pycryptodomex
