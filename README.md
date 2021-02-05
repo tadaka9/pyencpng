@@ -8,29 +8,6 @@ A steganographic library to encrypt files and text in PNG images using CSPRNG ra
 
 This is the base library to build the Laniakea ([Laniakea Supercluster](https://en.wikipedia.org/wiki/Laniakea_Supercluster)) blockchain (to be developed).
 
-## BINARY USAGE
-```
-# Windows
-encpng-windows-amd64.exe [ [ -dir or --directory ] OUTPUT_PATH [ -e or --encrypt ] STRING or FILE [ -p or --password ] PASSWORD ] or [ [ --dir or --directory ] OUTPUT_PATH [ -d or --decrypt ] FILE [ -p or --password ] PASSWORD ]
-# Linux
-./encpng-linux-amd64 [ [ -dir or --directory ] OUTPUT_PATH [ -e or --encrypt ] STRING or FILE [ -p or --password ] PASSWORD ] or [ [ --dir or --directory ] OUTPUT_PATH [ -d or --decrypt ] FILE [ -p or --password ] PASSWORD ]
-# Raspberry Pi with Linux
-./encpng-linux-armhf [ [ -dir or --directory ] OUTPUT_PATH [ -e or --encrypt ] STRING or FILE [ -p or --password ] PASSWORD ] or [ [ --dir or --directory ] OUTPUT_PATH [ -d or --decrypt ] FILE [ -p or --password ] PASSWORD ]
-```
-## BINARY EXAMPLES
-```
-# Linux
-./encpng-linux-amd64 -dir path/to/output -e Hello World -p Konnichiha!?[
-# Windows
-encpng-windows-amd64.exe -dir path/to/output -e Hello World -p Konnichiha!?[
-```
-```
-# Linux
-./encpng-linux-amd64 -d 08a30930-ecdf-4f6a-9978-c274093d63e1.png -p Konnichiha!? [
-# Windows
-encpng-windows-amd64.exe -d 08a30930-ecdf-4f6a-9978-c274093d63e1.png -p Konnichiha!? [
-```
-
 ## INSTALLATION
 
 Use the package manager [pip](https://pip.pypa.io/en/stable/) and [git](https://git-scm.com/) distributed version control to install EncPNG.
