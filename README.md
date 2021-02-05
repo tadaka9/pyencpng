@@ -11,9 +11,6 @@ This is the base library to build the Laniakea ([Laniakea Supercluster](https://
 ## INSTALLATION
 
 Use the package manager [pip](https://pip.pypa.io/en/stable/) and [git](https://git-scm.com/) distributed version control to install EncPNG.
-<br>On Linux, MacOS, and Windows's Cygwin (or MinGW), GCC or Clang should be installed.</br>
-<br>On Windows, Microsoft C/C++ compiler (for Visual Studio) should be installed (to avoid errors like: "Unable to find vcvarsall.bat").</br>
-OpenSSL should be installed.
 <br>If you get memory error from Python, increase Windows paging or Linux swap.<br>
 ## Installation instructions
 
