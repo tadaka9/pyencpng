@@ -21,6 +21,8 @@ OpenSSL should be installed.
 # Make sure you have the latest versions of pip, setuptools and wheel installed
 python3 -m pip install --upgrade pip setuptools wheel
 pip3 install encpng
+git clone https://github.com/tadaka9/pyencpng.git
+cd pyencpng
 ```
 ## USAGE
 ```
