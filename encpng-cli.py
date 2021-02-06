@@ -1,7 +1,7 @@
 """
 Author:      tadaka9
 Date:        2020-25-10
-Description: An encryption/decryption library for strings, hashes, files, using PNG images as container
+Description: An encryption/decryption commandline for strings, hashes, files, using PNG images as container
              (generated with a cryptographically secure random generator for RGB values),
              and an AES-256 cryptographically secure algorithm to store data.
 
