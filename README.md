@@ -19,17 +19,17 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) and [git](https://
 ```bash
 # Make sure you have the latest versions of pip, setuptools and wheel installed
 python3 -m pip install --upgrade pip setuptools wheel
-pip3 install encpng
+pip install encpng
 git clone https://github.com/tadaka9/pyencpng.git
 cd pyencpng
 ```
 ## USAGE
 ```
-python3 encpng-cli.py [ [ -dir or --directory ] OUTPUT_PATH [ -e or --encrypt ] STRING or FILE [ -p or --password ] PASSWORD ] or [ [ --dir or --directory ] OUTPUT_PATH [ -d or --decrypt ] FILE [ -p or --password ] PASSWORD ]
+python encpng-cli.py [ [ -dir or --directory ] OUTPUT_PATH [ -e or --encrypt ] STRING or FILE [ -p or --password ] PASSWORD ] or [ [ --dir or --directory ] OUTPUT_PATH [ -d or --decrypt ] FILE [ -p or --password ] PASSWORD ]
 ```
 ## EXAMPLES
 ```python
-python3 encpng-cli.py --dir out/dir/path --encrypt file.txt --password Password1 23!"£
+python encpng-cli.py --dir out/dir/path --encrypt file.txt --password Password1 23!"£
 ```
 ```python
 python encpng-cli.py --dir out/dir/path --decrypt 08a30930-ecdf-4f6a-9978-c274093d63e1.png --password Password1 23!"£
