@@ -18,7 +18,7 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) and [git](https://
 
 ```bash
 # Make sure you have the latest versions of pip, setuptools and wheel installed
-python3 -m pip install --upgrade pip setuptools wheel
+python -m pip install --upgrade pip setuptools wheel
 pip install encpng
 git clone https://github.com/tadaka9/pyencpng.git
 cd pyencpng
